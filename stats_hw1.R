@@ -36,4 +36,22 @@ word_xtabs <- xtabs(~word + r, data=df1)
 # The rate of r-lessness in 'fourth' is 77.23%, which is 18.44% higher than in 'floor'
 
 # Part 3
+df_2 <- read.table("VOT.tsv", sep="\t", header=TRUE)
+sorted_vot <- sort(df_2$vot)
+quantile(sorted_vot)
+# Quartiles for VOT: 1st = -17.975, median = 13.825, 3rd = 27.365
 
+df_esp <- df_2[df_2$language=="spanish", ]
+mean(df_esp$vot)
+# Mean of spanish speakers' VOTs = -24.313
+
+df_eng <- df_2[df_2$language=="english", ]
+sd(df_eng$vot)
+# sample standard deviation of English speakers' VOT = 19.865
+
+# Stretch goal
+sample_mean <- mean(df_eng$vot)
+numerator <- sum((df_eng$vot-sample_mean)^2)
+s = sqrt(numerator/(length(df_eng$vot)-1))
+s
+# sample standard deviation = 19.865
