@@ -1,14 +1,12 @@
-# R commands go here
-
 # Part 1
 (1/3) + (1/4) # 1
 2^10 +1 # 2
 f <- 440
-1127*log(1 + (f/440)) # 3
+1127*log(1 + (f/700)) # 3
 a <- 2
 b <- 4
 c <- -4
-(-b + sqrt((b^2) - 4*a*c)/2*a) # 4
+(-b + sqrt((b^2) - 4*a*c))/(2*a) # 4
 
 # Part 2
 df1 <- read.csv("NYC.csv", header = TRUE)
